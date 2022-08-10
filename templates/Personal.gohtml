@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<li> {{.student.Student_id }} </li>
+<li>{{.student.First_name}}</li>
+<li>{{.student.Last_name}}</li>
+<li>{{.student.Login}}</li>
+<li>{{.student.Password}}</li>
+<li>{{.student.Birth_date}}</li>
+<li>{{.student.Registredon}}</li>
+<li>{{.student.Lastlogin}}</li>
+
+<a href="{{.student.Student_id }}/my_courses">My Courses</a>
+<a href="{{.student.Student_id }}/all_courses">All Courses</a>
+
+</body>
+</html>

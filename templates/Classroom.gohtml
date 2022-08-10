@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Classrooms</title>
+</head>
+<body>
+
+<a href="/admin">return</a>
+<form method="post" action="classroom/create">
+
+
+    <label>
+        Capcity:
+        <input type="number" name="capacity">
+    </label>
+
+    <button type="submit">
+        Add
+    </button>
+</form>
+<table>
+
+    <tr>
+        <td>Classroom id</td>
+        <td>Capacity</td>
+    </tr>
+
+    {{ range .classrooms }}
+        <tr>
+            <td>{{.Classroom_id}}</td>
+            <td>{{.Capacity}}</td>
+        </tr>
+    {{end}}
+
+</table>
+
+</body>
+</html>

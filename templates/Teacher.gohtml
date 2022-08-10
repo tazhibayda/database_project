@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher</title>
+</head>
+<body>
+<a href="/admin">return</a>
+
+<div class="Create">
+    <form method="post" action="teacher/create">
+        <label>
+            <input type="text" name="FirstName" value="">
+        </label>
+        <label>
+            <input type="text" name="LastName" value="">
+        </label>
+        <label>
+            <input type="text" name="Login" value="">
+        </label>
+        <label>
+            <input type="text" name="Password" value="">
+        </label>
+        <button type="submit">
+            Add
+        </button>
+    </form>
+</div>
+<table>
+    <tr>
+        <td>id</td>
+        <td>First name</td>
+        <td>Last Name</td>
+        <td>Login</td>
+        <td>Password</td>
+        <td>Registdation</td>
+        <td>Last login</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    {{ range .teachers }}
+        <tr>
+            <td> {{ .Teacher_id }} </td>
+            <td>{{.First_name}}</td>
+            <td>{{.Last_name}}</td>
+            <td>{{.Login}}</td>
+            <td>{{.Password}}</td>
+            <td>{{.Registredon}}</td>
+            <td>{{.Lastlogin}}</td>
+            <td>Edit</td>
+            <td>
+                <form action="/teacher/delete/{{.Teacher_id}}" method="GET">
+                    <button>
+                        Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+    {{ end }}
+</table>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Attendance</title>
+</head>
+<body>
+<a href="/admin">return</a>
+
+    <form method="post" action="attendance/create">
+        <label>
+            Course id:
+            <input type="number" name="course">
+        </label>
+        <label>
+            Student id:
+            <input type="number" name="student">
+        </label>
+        <label>
+            Date:
+            <input type="date" name="date">
+        </label>
+        <label>
+            Attendance
+            <input type="checkbox" name="stamp">
+        </label>
+        <button type="submit">Add</button>
+    </form>
+    <table>
+
+        <tr>
+            <td>Course id</td>
+            <td>Student id</td>
+            <td>Attandance Date</td>
+            <td>Stamp</td>
+        </tr>
+        {{ range .attendance}}
+            <tr>
+                <td>{{.Course_id}}</td>
+                <td>{{.Student_id}}</td>
+                <td>{{.AttDate}}</td>
+                <td>{{.Stamp}}</td>
+            </tr>
+        {{end}}
+    </table>
+
+</body>
+</html>

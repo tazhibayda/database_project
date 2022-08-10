@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="attendance/save">
+        <table>
+            <tr>
+                <td>id</td>
+                <td>First name</td>
+                <td>Last Name</td>
+                <td> <input type="date" name="date"> </td>
+            </tr>
+
+            {{range .students}}
+                <tr>
+                    <td> {{ .Student_id }} </td>
+                    <td>{{.First_name}}</td>
+                    <td>{{.Last_name}}</td>
+                    <td><input type="checkbox" name="{{.Student_id}}"></td>
+                </tr>
+            {{end}}
+
+        </table>
+        <button type="submit">add</button>
+    </form>
+</body>
+</html>

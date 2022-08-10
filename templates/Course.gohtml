@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Course</title>
+</head>
+<body>
+<a href="/admin">return</a>
+    <form method="post" action="/course/create">
+
+        <label>
+            Classroom id:
+            <input type="number" name="classroom">
+        </label>
+        <label>
+            Course code:
+            <input type="text" name="code">
+        </label>
+        <label>
+            Teacher id:
+            <input type="number" name="teacher">
+        </label>
+        <button type="submit">
+            Add
+        </button>
+    </form>
+    <table>
+
+        <tr>
+            <td>Course id</td>
+            <td>Classroom</td>
+            <td>Course Code</td>
+            <td>Teacher Id</td>
+        </tr>
+
+        {{ range .courses }}
+            <tr>
+                <td>{{.Course_id}}</td>
+                <td>{{.Classroom_id}}</td>
+                <td>{{.Course_Code}}</td>
+                <td>{{.Teacher_id}}</td>
+            </tr>
+        {{end}}
+
+    </table>
+
+</body>
+</html>

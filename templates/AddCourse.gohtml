@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<form method="post">
+    <table>
+
+        <tr>
+            <td>Course id</td>
+            <td>Classroom</td>
+            <td>Course Code</td>
+            <td>Teacher Id</td>
+            <td>Add</td>
+        </tr>
+
+        {{ range .courses }}
+            <tr>
+                <td>{{.Course_id}}</td>
+                <td>{{.Classroom_id}}</td>
+                <td>{{.Course_Code}}</td>
+                <td>{{.Teacher_id}}</td>
+                <td><button type="submit" formaction="all_courses/{{.Course_id}}">add</button></td>
+            </tr>
+        {{end}}
+
+    </table>
+</form>
+
+</body>
+</html>
